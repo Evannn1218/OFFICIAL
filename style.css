@@ -1,1 +1,16 @@
-style.css
+/* 确保视频全屏覆盖，不影响其他内容 */
+.video-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;  /* 让视频在背景，不遮挡按钮 */
+}
+
+/* 让视频自适应屏幕，不拉伸变形 */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
