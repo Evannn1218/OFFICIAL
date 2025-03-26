@@ -1,16 +1,32 @@
-/* 确保视频全屏覆盖，不影响其他内容 */
-.video-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;  /* 让视频在背景，不遮挡按钮 */
+/* 保证 body 不产生水平滚动条 */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 隐藏水平滚动 */
+    box-sizing: border-box;
 }
 
-/* 让视频自适应屏幕，不拉伸变形 */
-.video-container video {
+/* 视频容器 */
+.video-container {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 62vh;               /* 你想要的视频可视高度 */
+    margin: 0 auto;            /* 如果需要让容器本身也居中（在大容器里），可以保留 auto */
+    background-color: #000;     /* 空白区域使用黑色填充 */
+    overflow: hidden;           /* 避免溢出导致滚动 */
+    display: flex;
+    justify-content: center;    /* 水平居中 */
+    align-items: center;        /* 垂直居中 */
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* 视频本身 */
+.video-container video {
+    max-width: 100%;          /* 不超过容器宽度 */
+    max-height: 100%;         /* 不超过容器高度 */
+    object-fit: contain;      /* 完整显示视频，可能出现上下或左右黑边 */
+    object-position: center;  /* 将视频内容居中 */
+    pointer-events: none;     /* 禁用鼠标事件 */
+    display: block;           /* 避免 inline-block 的空隙问题 */
 }

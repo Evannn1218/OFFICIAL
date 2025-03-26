@@ -1,6 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Center Example</title>
+<style>
+    /* 基础样式，去掉默认边距并让页面填满整个窗口 */
+    html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+      background-color: #000; /* 页面背景为黑色 */
+    }
+
+    /* 让 body 成为一个 flex 容器，子元素居中对齐 */
+    body {
+    display: flex;
+    align-items: center;   /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    overflow: hidden;     /* 禁止滚动（水平/垂直都隐藏） */
+    }
+
+    /* 如果你还想在容器外包一层 div，可用 .video-container 来包住视频 */
+    .video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+      /* 也可以设宽高，比如 width: 80%; height: 80%; 自行选择 */
+    }
+
+    video {
+      max-width: 100%;       /* 不超过容器宽度 */
+      max-height: 100%;      /* 不超过容器高度 */
+      object-fit: contain;   /* 保证视频不被裁剪 */
+      object-position: center center; /* 视频内容居中 */
+      display: block;        /* 去掉行内元素默认空隙 */
+      pointer-events: none;  /* 禁止鼠标事件，可选 */
+    }
+</style>
+</head>
+<body>
 <div class="video-container">
     <video autoplay loop muted playsinline>
-        <source src="bg.mp4" type="video/mp4">
-        您的浏览器不支持 HTML5 视频。
+    <source src="name.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 视频。
     </video>
 </div>
+</body>
+</html>
