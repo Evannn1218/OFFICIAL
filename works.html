@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Works - Evan Xiao</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      padding: 15px 20px;
+      z-index: 1100;
+      text-align: center;
+    }
+    header nav a {
+      margin: 0 30px;  /* 按钮之间的间距：30px */
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em; /* 按钮字体为 1.2em */
+    }
+    .works-section {
+      padding: 80px 20px; /* 顶部内边距：80px */
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: calc(100% - 80px);
+    }
+    .works-section h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+    .works-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .work-item {
+      background-color: #111;
+      padding: 10px;
+      border-radius: 5px;
+      flex: 0 0 calc(33.33% - 20px);
+      box-sizing: border-box;
+    }
+    .work-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+    .work-item h2 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+    .work-item p {
+      font-size: 1em;
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .work-item {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 480px) {
+      .work-item {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 固定顶部导航 -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="works.html">Works</a>
+    </nav>
+  </header>
+  <!-- Works 页面内容 -->
+  <section class="works-section">
+    <h1>My Works</h1>
+    <div class="works-grid">
+      <!-- 示例作品项，请替换图片及描述 -->
+      <div class="work-item">
+        <img src="work1.jpg" alt="Work 1">
+        <h2>Work Title 1</h2>
+        <p>Short description of work 1.</p>
+      </div>
+      <div class="work-item">
+        <img src="work2.jpg" alt="Work 2">
+        <h2>Work Title 2</h2>
+        <p>Short description of work 2.</p>
+      </div>
+      <div class="work-item">
+        <img src="work3.jpg" alt="Work 3">
+        <h2>Work Title 3</h2>
+        <p>Short description of work 3.</p>
+      </div>
+      <!-- 根据需要继续添加更多作品 -->
+    </div>
+  </section>
+</body>
+</html>
